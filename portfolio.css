@@ -10,6 +10,7 @@ body {
   linear-gradient(rgb(26, 26, 26) 1px, transparent 1px), /* horizontal lines */
   linear-gradient(90deg, rgb(26, 26, 26) 1px, transparent 1px); /* vertical lines */
   background-size: 40px 40px; /* adjust spacing here */
+  overflow-x: hidden;
 }
 
 nav{
@@ -27,12 +28,13 @@ nav{
     z-index: 10000;
     top: 20px;
     font-family: Poppins, sans-serif;
-    background: rgba(255, 255, 255, 0.129);
+    background: rgba(255, 255, 255, 0.079);
     backdrop-filter: blur(10px);
     box-shadow: 0px 8px 16px -6px rgba(46, 97, 255, 0.4);
     border: 1px solid rgba(255, 255, 255, 0.1);
     color: white;
     height: 50px;
+    flex-wrap: wrap;
 }
 nav h1{
     font-size: x-large;
@@ -45,11 +47,38 @@ nav #tabs{
     font-size: small;
     font-weight: normal;
 }
+#tabs h3{
+    cursor: pointer;
+}
 #sun{
     border: none;
     background-color: none;
     scale: 0.8;
 }
+@media (min-width: 0px) and (max-width: 768px) {
+    nav{
+        width: 85%;
+        position: sticky;
+    }
+    nav #tabs{
+        display: none;
+    }
+    nav h1{
+        font-size: large;
+    }
+    #sun{
+        scale: 0.7;
+    }
+}
+@media (min-width:768px) and (max-width:1024px){
+    nav{
+        width: 65%;
+    }
+    nav #tabs{
+        display: none;
+    }
+}
+
 /* ------------------------------------------------------- */
 #wind1{
     height: 100vh;
@@ -112,6 +141,18 @@ svg path{
     height: 70%;
     width: 3px;
     background: #2E61FF;
+}
+@media (min-width: 0px) and (max-width: 768px){
+    .myname{
+        scale: 0.5;
+        gap: 30px;
+    }
+    .roletop{
+        width: max-content;
+    }
+    .rolebot{
+        width: max-content;
+    }
 }
 /* ------------------------------------------------------- */
 #wind2{
@@ -260,11 +301,34 @@ svg path{
     font-size: 16px;
     padding: 3px 0px;
 }
+@media (min-width: 0px) and (max-width: 768px){
+    #wind2{
+        gap: 5%;
+        height: 150vh;
+    }
+    #content2{
+        display: flex;
+        flex-direction: column;
+        gap: 7%;
+    }
+    #lefts button{
+        width: max-content;
+    }
+    #mybox{
+        height: 70%;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+}
 /* ------------------------------------------------------- */
 #win3{
     display: flex;
     flex-direction: column;
-    height: 75vh;
+    height: 95vh;
     gap: 20%;
     scale: 0.95;
 }
@@ -356,12 +420,25 @@ svg path{
     background: linear-gradient(to right, #3b82f6, #6366f1); /* 🔵 Gradient bar */
 
 }
+@media (min-width: 0px) and (max-width: 768px) {
+    #win3{
+        display: flex;
+        flex-direction: column;
+        height: 170vh;
+        gap: 0%;
+    }
+    #cards{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
 /* ------------------------------------------------------- */
 #win4{
     height: 160vh;
     display: flex;
     flex-direction: column; 
-    gap: 80px;
+    gap: 0px;
     scale: 0.9;
     overflow: hidden;
     top: 0;
@@ -468,9 +545,40 @@ svg path{
     font-size: small;
     font-family: Poppins;
 }
+@media (min-width: 0px) and (max-width: 768px){
+    #win4{
+        margin: 0px;
+        height: 180vh;
+        scale: 1;
+    }
+    .banner h2{
+        margin: 0px;
+        padding: 0px;
+    }
+    .context1{
+        width: 100%;
+        max-width: 100%;
+        gap: 10px;
+        justify-content: center;
+        flex-wrap: wrap; 
+    }
+    .context2{
+        width: 100%;
+        max-width: 100%;
+        gap: 5px;
+        justify-content: center;
+        flex-wrap: wrap; 
+    }
+    .subbanner{
+        width: calc(33.33% - 40px);
+    }
+    
+}
 /* ------------------------------------------------------- */
 .win5{
-    height: 150vh;
+    min-height: 90vh;
+    margin-bottom: 100px;
+    height: auto;
     display: flex;
     flex-direction: column; 
     gap: 30px;
@@ -528,15 +636,40 @@ svg path{
 #categories h3:last-child{
     border-right: none;
 }
-.content5{
+#categories h3:nth-child(1){
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px ;
+}
+#categories h3:nth-child(3){
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px ;
+}
+#categories h3:nth-child(1):hover{
+    background-color: #2e62ff92;
+}
+#categories h3:nth-child(2):hover{
+    background-color: #2e62ff92;
+}
+#categories h3:nth-child(3):hover{
+    background-color: #2e62ff92;   
+}
+#c_da,#c_ai,#c_wd{
+    cursor: pointer;
+}
+#content5_1,#content5_2,#content5_3{
     left: 0;
-    /* width: 1600px; */
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     align-items: center;
     justify-content: space-around;
     scale: 0.9;
+}
+#content5_2{
+    display: none;
+}
+#content5_3{
+    display: none;
 }
 .contxt3{
     display: flex;
@@ -581,6 +714,47 @@ svg path{
     border-radius: 5px;
     font-weight: 300;
 }
+
+@media (min-width: 0px) and (max-width: 768px){
+    .win5{
+        max-height: max-content ;
+        margin-bottom: 50px;
+    }
+    #content5_1{
+        display: grid;
+        grid-template-columns: 1fr;
+        scale: 0px;
+        gap: 0px;
+        margin-top: -70px;
+    }
+    #content5_2{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0px;
+        display: none;
+        margin-top: -7px;
+    }
+    #content5_3{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0px;
+        display: none;
+        margin-top: -22px;
+    }
+    #categories h3:nth-child(1):hover{
+        background-color: initial;
+    }
+    #categories h3:nth-child(2):hover{
+        background-color: initial;
+    }
+    #categories h3:nth-child(3):hover{
+        background-color: initial;
+    }
+    .contxt3{
+        scale: 85%;
+    }
+}
+
 /* ------------------------------------------------------- */
 #win6{
     /* height: 200vh; */
@@ -591,6 +765,7 @@ svg path{
     overflow: hidden;
     top: 0;
     color: white;
+    margin-top: 170px;
 }
 #hh5{
     font-family: Poppins;
@@ -728,9 +903,90 @@ svg path{
     font-weight: 600;
     font-size: 16px;
 }
+#content6_1{
+    display: none;
+}
+@media (min-width: 0px) and (max-width: 768px){
+    #win6{
+        height: 310vh;
+        /* margin-top: -200px; */
+    }
+    #content6{
+        display: none;
+        height: 90%;
+    }
+    #content6_1{
+        display: grid;
+        grid-template-columns: 3px 1fr;
+        align-items: center;
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
+        border: 1px solid rgb(89, 89, 89);
+        border-radius: 20px;
+        padding: 50px 0px;
+        background: rgba(255, 255, 255, 0.129);
+        backdrop-filter: blur(10px);
+        font-family: Poppins;
+        gap: 60px;   
+        width: 95%;
+    }
+    .content_middle1{
+        height: 110%;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 20px;
+    }
+    .logoencloser{
+        transform: translateX(-10%);
+        height: 60px;
+        width: 60px;
+        z-index: 9;
+    }
+    .cmpimg{
+        position: absolute;
+        transform: translateX(25%);
+        height: 40px;
+        width: 40px;
+        z-index: 10;
+    }
+    .content_middle1::after{
+        content: "";
+        height: 20.2%;
+        background-color: white;
+        width: 1px;
+        position: absolute;
+        margin-left: 5.5%;
+        z-index: 0;
+        width: 2px;
+    }
+    .content_details{
+        margin: 0px;
+        margin-left: auto;
+        margin-right: auto;
+        transform: translateX(0%) translateY(-5%);
+    }
+    .content_middle_top{
+        background: rgb(255, 255, 255);
+        height: 90px;
+        width: 2px; 
+        transform: translateX(80%);
+    }
+    .cmpdet{
+        line-height: 30px;
+        font-size: 12px;
+    }
+    .cmpdet h3{
+        font-weight: 300;
+    }
+    .cmpbrief{
+        font-weight: 500;
+        font-size: 14px;
+    }
+}
 /* -------------------------------------------------- */
 .mt{
-    height: 20vh;
+    height:30vh;
 }
 /* -------------------------------------------------- */
 #win7{
@@ -866,4 +1122,216 @@ svg path{
 .logos{
     display: flex;
     justify-content: space-evenly;
+}
+@media (min-width: 0px) and (max-width: 768px){
+    #win7{
+        height: 110vh;
+    }
+    .content7{
+        display: flex;
+        flex-direction: column;
+        gap: 3%;
+        height: 90%;
+        max-width: 100%;
+    }
+    fieldset{
+        display: flex;
+        flex-direction: column;
+        max-width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .name_email{
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+    }
+    #mb_name{
+        width: auto;
+        max-width: 100%;
+    }
+    #mb_email{
+        width: auto;
+        max-width: 100%;
+    }
+    #mb_subject{
+        max-width: 100;
+    }
+    #mb_message{
+        max-width: 100%;
+        height: 100px;
+    }
+    .right{
+        display: flex;
+        flex-direction: column;
+    }
+    #snd_msg{
+        width: 40%;
+        border-radius: 10px;
+        font-weight: 300;
+    }
+    .contactinfo{
+        max-width: 85%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .connectwithme{
+        max-width: 85%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+/* ---------------------------------------------------- */
+#win8{
+    position: sticky;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid black;
+    padding: 15px 15px;
+    border-radius: 20px;
+    z-index: 10000;
+    bottom: 20px;
+    font-family: Poppins, sans-serif;
+    background: rgba(255, 255, 255, 0);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    height: 20px;
+    flex-wrap: wrap;
+    width: 90%;
+    display: none;
+}
+#tabs1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+    height: 100%;
+}
+#but_homewindow,#but_aboutwindow, #but_projectswindow, #but_skillswindow, #but_experiencewindow, #but_contactwindow{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    height: 35px;
+    width: 35px;
+}
+@media (min-width: 0px) and (max-width: 768px){
+    #win8{
+        display: flex;
+    }
+}
+#wind1, #wind2,  #win7 {
+    scroll-margin-top: 140px; /* Adjust this value as needed */
+}
+/* #win4, #wind5, #win6 {
+    scroll-margin-top: 200px;
+    scroll-margin-bottom: -500px;
+} */
+#skills{
+    scroll-margin-top: 90px;
+}
+/* ---------------------------------------------------- */
+
+/* Animations */
+#hh1{
+    animation: PopAnimation 0.5s ease-in 1;    
+    animation-fill-mode: forwards;
+}
+@keyframes PopAnimation {
+    0%{
+        display: none;
+        margin-top: 100px;
+    }
+    /* 80%{
+        display: block;
+        margin-top: 50px;
+
+    } */
+    100%{
+        margin-top: 0px;
+    }
+}
+.context1{
+    animation: lefttoright 0.5s ease-in 1;    
+    animation-fill-mode: forwards;
+}
+@keyframes lefttoright{
+    0%{
+        display: none;
+        margin-left: -700px;
+    }
+    100%{
+        display: flex;
+        margin-left: 0px;
+    }
+}
+/* .context2{
+    animation: righttoleft 0.5s ease-in 1;    
+    animation-fill-mode: forwards;
+}
+@keyframes righttoleft{
+    0%{
+        display: none;
+        margin-right: -700px;
+    }
+    100%{
+        display: flex;
+        margin-right: 0px;
+    }
+} */
+.context2 .subbanner {
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in forwards;
+}
+
+/* Delay for each icon using nth-child */
+.context2 .subbanner:nth-child(1) {
+    animation-delay: 0.2s;
+}
+.context2 .subbanner:nth-child(2) {
+    animation-delay: 0.4s;
+}
+.context2 .subbanner:nth-child(3) {
+    animation-delay: 0.6s;
+}
+.context2 .subbanner:nth-child(4) {
+    animation-delay: 0.8s;
+}
+.context2 .subbanner:nth-child(5) {
+    animation-delay: 1s;
+}
+.context2 .subbanner:nth-child(6) {
+    animation-delay: 1.2s;
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Add more nth-child rules as needed */
+
+/* Fade In Animation */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+#lefts{
+    animation: PopAnimation 0.5s ease-in 1;    
+    animation-fill-mode: forwards;
+}
+#mybox{
+    animation: PopAnimation 0.5s ease-in 1;    
+    animation-fill-mode: forwards;
 }

@@ -20,14 +20,14 @@
     <nav>
         <h1>&lt;Portfolio/&gt;</h1>
         <div id="tabs">
-            <h3>Home</h3>
-            <h3>About</h3>
-            <h3>Skills</h3>
-            <h3>Projects</h3>
-            <h3>Experience</h3>
-            <h3>Contact</h3>
+            <h3 id="homewindow" onclick="scrolltohome()">Home</h3>
+            <h3 id="aboutwindow" onclick="scrolltoabout()">About</h3>
+            <h3 id="skillswindow" onclick="scrolltoskills()">Skills</h3>
+            <h3 id="projectswindow" onclick="scrolltoprojects()">Projects</h3>
+            <h3 id="experiencewindow" onclick="scrolltoexperience()">Experience</h3>
+            <h3 id="contactwindow" onclick="scrolltocontact()">Contact</h3>
         </div>
-        <img id="sun" src="./images/lighttheme.png" alt="">
+        <img id="sun" onclick="lighttheme()" src="./images/lighttheme.png" alt="">
     </nav>
     <div id="wind1">
         <div class="myname">
@@ -348,19 +348,19 @@
             </div>
         </div>
     </div>
-    <div class="win5">
+    <div class="win5" id="wind5">
         <div id="hh4">
             <div id="hh4_1">
                 <h1 id="prjcts">Projetcs</h1>
                 <div id="line4"></div>
             </div>
             <div id="categories">
-                <h3>Data Analytics</h3>
-                <h3>AI/ML Models</h3>
-                <h3>Website Development</h3>
+                <h3 id="cda" onclick="da()">Data Analytics</h3>
+                <h3 id="cai" onclick="ai()">AI/ML Models</h3>
+                <h3 id="cwd" onclick="wd()">Website Development</h3>
             </div>
         </div>
-        <div class="content5">
+        <div id="content5_1">
             <div class="contxt3">
                 <img class="primg" src="./images/image.png" alt="">
                 <div>
@@ -408,6 +408,60 @@
                 </div>
                 <div class="prdet">
                     <h2>Shopping Dataset</h2>
+                    <h3><img class="git" src="./images/github.png" alt="">Github</h3>
+                </div>
+            </div>
+        </div>
+        <div id="content5_2">
+            <div class="contxt3">
+                <img class="primg" src="./images/netflix.png" alt="">
+                <div>
+                    <img src="" alt="">
+                </div>
+                <div class="prdet">
+                    <h2>Hand Gesture Detection</h2>
+                    <h3><img class="git" src="./images/github.png" alt="">Github</h3>
+                </div>
+            </div>
+            <div class="contxt3">
+                <img class="primg" src="./images/netflix.png" alt="">
+                <div>
+                    <img src="" alt="">
+                </div>
+                <div class="prdet">
+                    <h2>Face anonymizer</h2>
+                    <h3><img class="git" src="./images/github.png" alt="">Github</h3>
+                </div>
+            </div>
+        </div>
+        <div id="content5_3">
+            <div class="contxt3">
+                <img class="primg" src="./images/netflix.png" alt="">
+                <div>
+                    <img src="" alt="">
+                </div>
+                <div class="prdet">
+                    <h2>Rock paper Scissors</h2>
+                    <h3><img class="git" src="./images/github.png" alt="">Github</h3>
+                </div>
+            </div>
+            <div class="contxt3">
+                <img class="primg" src="./images/netflix.png" alt="">
+                <div>
+                    <img src="" alt="">
+                </div>
+                <div class="prdet">
+                    <h2>calculator</h2>
+                    <h3><img class="git" src="./images/github.png" alt="">Github</h3>
+                </div>
+            </div>
+            <div class="contxt3">
+                <img class="primg" src="./images/netflix.png" alt="">
+                <div>
+                    <img src="" alt="">
+                </div>
+                <div class="prdet">
+                    <h2>Mkommerce</h2>
                     <h3><img class="git" src="./images/github.png" alt="">Github</h3>
                 </div>
             </div>
@@ -498,6 +552,79 @@
                 </h3>
             </div>
         </div>
+        <div id="content6_1">
+            <div class="content_middle1">
+                
+                <div class="logoencloser"><img class="cmpimg" src="./images/company.png" alt=""></div>
+            </div>
+            <div class="content_details">
+                <img class="pin" src="./images/pin.png" alt="">
+                <div class="cmpdet">
+                    <h2> Full Stack & Flutter Developer </h2>
+                    <h3> Praskla Technology </h3>
+                </div>
+                <h3 class="cmpbrief"> Built the Enterprise Management System frontend with Flutter and integrated
+                    backend services. Designed and deployed a responsive company website using React.js and Tailwind
+                    CSS. Handled end-to-end deployment for web and mobile apps, ensuring performance and scalability.
+                </h3>
+            </div>
+            <div class="content_middle1">
+                <div class="logoencloser"><img class="cmpimg" src="./images/company.png" alt=""></div>
+            </div>
+            <div class="content_details">
+                <img class="pin" src="./images/pin.png" alt="">
+                <div class="cmpdet">
+                    <h2> Full Stack & Flutter Developer </h2>
+                    <h3> Praskla Technology </h3>
+                </div>
+                <h3 class="cmpbrief"> Built the Enterprise Management System frontend with Flutter and integrated
+                    backend services. Designed and deployed a responsive company website using React.js and Tailwind
+                    CSS. Handled end-to-end deployment for web and mobile apps, ensuring performance and scalability.
+                </h3>
+            </div>
+            <div class="content_middle1">
+                <div class="logoencloser"><img class="cmpimg" src="./images/company.png" alt=""></div>
+            </div>
+            <div class="content_details">
+                <img class="pin" src="./images/pin.png" alt="">
+                <div class="cmpdet">
+                    <h2> Full Stack & Flutter Developer </h2>
+                    <h3> Praskla Technology </h3>
+                </div>
+                <h3 class="cmpbrief"> Built the Enterprise Management System frontend with Flutter and integrated
+                    backend services. Designed and deployed a responsive company website using React.js and Tailwind
+                    CSS. Handled end-to-end deployment for web and mobile apps, ensuring performance and scalability.
+                </h3>
+            </div>
+            <div class="content_middle1">
+                <div class="logoencloser"><img class="cmpimg" src="./images/company.png" alt=""></div>
+            </div>
+            <div class="content_details">
+                <img class="pin" src="./images/pin.png" alt="">
+                <div class="cmpdet">
+                    <h2> Full Stack & Flutter Developer </h2>
+                    <h3> Praskla Technology </h3>
+                </div>
+                <h3 class="cmpbrief"> Built the Enterprise Management System frontend with Flutter and integrated
+                    backend services. Designed and deployed a responsive company website using React.js and Tailwind
+                    CSS. Handled end-to-end deployment for web and mobile apps, ensuring performance and scalability.
+                </h3>
+            </div>
+            <div class="content_middle1">
+                <div class="logoencloser"><img class="cmpimg" src="./images/company.png" alt=""></div>
+            </div>
+            <div class="content_details">
+                <img class="pin" src="./images/pin.png" alt="">
+                <div class="cmpdet">
+                    <h2> Full Stack & Flutter Developer </h2>
+                    <h3> Praskla Technology </h3>
+                </div>
+                <h3 class="cmpbrief"> Built the Enterprise Management System frontend with Flutter and integrated
+                    backend services. Designed and deployed a responsive company website using React.js and Tailwind
+                    CSS. Handled end-to-end deployment for web and mobile apps, ensuring performance and scalability.
+                </h3>
+            </div>
+        </div>
     </div>
     <div class="mt">
 
@@ -545,6 +672,17 @@
             </div>
         </div>
     </div>
+    <div id="win8">
+            <div id="tabs1">
+                <div id="but_homewindow"><img id="homewindow" onclick="scrolltohome()" src="./images/home.png" alt=""></div>
+                <div id="but_aboutwindow"><img id="aboutwindow" onclick="scrolltoabout()" src="./images/people.png" alt=""></div>
+                <div id="but_skillswindow"><img id="skillswindow" onclick="scrolltoskills()" src="./images/circuit.png" alt=""></div>
+                <div id="but_projectswindow"><img id="projectswindow" onclick="scrolltoprojects()" src="./images/skill-development.png" alt=""></div>
+                <div id="but_experiencewindow"><img id="experiencewindow" onclick="scrolltoexperience()" src="./images/new-job.png" alt=""></div>
+                <div id="but_contactwindow"><img id="contactwindow" onclick="scrolltocontact()" src="./images/email.png" alt=""></div>
+            </div>
+    </div>
+    <script src="portfolio.js"></script>
 </body>
 
 </html>
