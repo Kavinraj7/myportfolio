@@ -36,112 +36,35 @@ function wd(){
     addcolour(2);
 }
 // ---------------------------------------------------------------------
-const wind_home = document.getElementById("homewindow");
-const wind_about = document.getElementById("aboutwindow");
-const wind_skills = document.getElementById("skillswindow");   
-const wind_projects = document.getElementById("projectswindow");
-const wind_experience = document.getElementById("experiencewindow");
-const wind_contact = document.getElementById("contactwindow");
-const but_home = document.getElementById("but_homewindow");
-const but_about = document.getElementById("but_aboutwindow");
-const but_skills = document.getElementById("but_skillswindow");
-const but_projects = document.getElementById("but_projectswindow");
-const but_experience = document.getElementById("but_experiencewindow");
-const but_contact = document.getElementById("but_contactwindow");
+// Set up intersection observer
+const sections = document.querySelectorAll('section');
+const navLinks = document.querySelectorAll('nav a');
+const bottags = document.querySelectorAll('#tabs1 a')
 
-function scrollWithOffset(elementId, offset) {
-    const element = document.getElementById(elementId);
-    const elementPosition = element.getBoundingClientRect().top;
-    const offsetPosition = elementPosition + window.pageYOffset - offset;
-    
-    window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth"
-    });
-}
+const options = {
+    threshold: 0.2
+};
 
-function underlinetabs(){
-    [but_home, but_about, but_skills, but_projects, but_experience, but_contact].forEach(button => {
-        Object.assign(button.style, {
-            backgroundColor: "transparent",
-            borderRadius: "0px",
-        });
-    });   
-    [wind_about, wind_home, wind_skills, wind_projects, wind_experience, wind_contact].forEach(window => {  
-        window.style.borderBottom = "none";
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const id = entry.target.getAttribute('id');
+            console.log(id)
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+            });
+            bottags.forEach(tags=>{
+                tags.classList.remove('active1')
+            });
+            const correspondingLink = document.querySelector(`nav a[href="#${id}"]`);
+            const correspondingLink1 = document.querySelector(`#tabs1 a[href="#${id}"]`);
+            if (correspondingLink) {
+                correspondingLink.classList.add('active');
+                correspondingLink1.classList.add('active1');
+            }
+        }
     });
-}
-wind_home.style.borderBottom = "3px solid #ffffffff";
-function scrolltohome() {
-    scrollWithOffset("wind1", 100);
-    underlinetabs();
-    Object.assign(but_home.style, {
-        backgroundColor: "#2E61FF",
-        borderRadius: "20px",
-    });
-    Object.assign(wind_home.style, {
-        borderBottom: "3px solid #ffffffff"
-    });
-}
-
-function scrolltoabout() {
-    scrollWithOffset("wind2", 150);
-    underlinetabs();
-    Object.assign(but_about.style, {
-        backgroundColor: "#2E61FF",
-        borderRadius: "20px",
-    });
-    Object.assign(wind_about.style, {
-        borderBottom: "3px solid #ffffffff"
-    });
-}
-
-function scrolltoskills() {
-    scrollWithOffset("win4", 120);
-    underlinetabs();
-    Object.assign(but_skills.style, {
-        backgroundColor: "#2E61FF",
-        borderRadius: "20px",
-    });
-    Object.assign(wind_skills.style, {
-        borderBottom: "3px solid #ffffffff"
-    });
-
-}
-
-function scrolltoprojects() {
-    scrollWithOffset("wind5", 180);
-    underlinetabs();
-    Object.assign(but_projects.style, {
-        backgroundColor: "#2E61FF",
-        borderRadius: "20px",
-    });
-    Object.assign(wind_projects.style, {
-        borderBottom: "3px solid #ffffffff"
-    });
-}
-
-function scrolltoexperience() {
-    scrollWithOffset("win6", 160);
-    underlinetabs();
-    Object.assign(but_experience.style, {
-        backgroundColor: "#2E61FF",
-        borderRadius: "20px",
-    });
-    Object.assign(wind_experience.style, {
-        borderBottom: "3px solid #ffffffff"
-    });
-}
-
-function scrolltocontact() {
-    scrollWithOffset("win7", 140);
-    underlinetabs();
-    Object.assign(but_contact.style, {
-        backgroundColor: "#2E61FF",
-        borderRadius: "20px",
-    });
-    Object.assign(wind_contact.style, {
-        borderBottom: "3px solid #ffffffff"
-    });
-}
-// ---------------------------------------------------------------------
+}, options);
+sections.forEach(section => {
+    observer.observe(section);
+});

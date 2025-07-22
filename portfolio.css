@@ -1,6 +1,7 @@
 *{
     margin: 0;
-    padding: 0
+    padding: 0;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -11,8 +12,11 @@ body {
   linear-gradient(90deg, rgb(26, 26, 26) 1px, transparent 1px); /* vertical lines */
   background-size: 40px 40px; /* adjust spacing here */
   overflow-x: hidden;
+  
 }
-
+.active{
+    border-bottom: 3px solid white;
+}
 nav{
     position: sticky;
     display: flex;
@@ -36,16 +40,18 @@ nav{
     height: 50px;
     flex-wrap: wrap;
 }
-nav h1{
-    font-size: x-large;
+nav a{
+    font-family: Poppins;
+    font-weight: 500;
+    font-size: medium;
+    text-decoration: none;
+    color: white;
 }
 nav #tabs{
     display: flex;
     justify-content: space-around;
     width: 60%;
     height: fit-content;
-    font-size: small;
-    font-weight: normal;
 }
 #tabs h3{
     cursor: pointer;
@@ -82,6 +88,8 @@ nav #tabs{
 /* ------------------------------------------------------- */
 #wind1{
     height: 100vh;
+    min-width: 100vw;
+    width: auto;
 }
 .myname{
     height: 80%;
@@ -156,9 +164,11 @@ svg path{
 }
 /* ------------------------------------------------------- */
 #wind2{
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
     display: flex;
     flex-direction: column;
+    gap: 40px;
     /* border: 2px solid black; */
     scale: 0.9;
 }
@@ -300,37 +310,45 @@ svg path{
 #words p{
     font-size: 16px;
     padding: 3px 0px;
+    line-height: 25px;
+}
+#gapfiller1{
+    display: none;
 }
 @media (min-width: 0px) and (max-width: 768px){
-    #wind2{
-        gap: 5%;
-        height: 150vh;
-    }
     #content2{
         display: flex;
         flex-direction: column;
-        gap: 7%;
     }
     #lefts button{
         width: max-content;
     }
     #mybox{
-        height: 70%;
-        width: 80%;
+        height: fit-content;
+        width: fit-content;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        padding: 0px 0px;
+    }
+    #gapfiller1{
+        display: block;
+        height: 60px;
     }
 
+}
+#gapfiller2{
+    height: 40vh;
 }
 /* ------------------------------------------------------- */
 #win3{
     display: flex;
     flex-direction: column;
-    height: 95vh;
-    gap: 20%;
-    scale: 0.95;
+    min-height: max-content;
+    height: auto;
+    gap: 60px;
+    /* scale: 0.95; */
 }
 #hh2{
     display: flex;
@@ -422,24 +440,28 @@ svg path{
 }
 @media (min-width: 0px) and (max-width: 768px) {
     #win3{
-        display: flex;
-        flex-direction: column;
-        height: 170vh;
-        gap: 0%;
+        gap: 60px;
     }
     #cards{
+        max-width:90% ;
+        width: auto;
         display: flex;
         flex-direction: column;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 
 /* ------------------------------------------------------- */
+.gapfiller2{
+    height: 30vh;
+}
 #win4{
-    height: 160vh;
+    min-height: max-content;
+    height: auto;
     display: flex;
     flex-direction: column; 
-    gap: 0px;
-    scale: 0.9;
+    gap: 50px;
     overflow: hidden;
     top: 0;
 }
@@ -547,9 +569,6 @@ svg path{
 }
 @media (min-width: 0px) and (max-width: 768px){
     #win4{
-        margin: 0px;
-        height: 180vh;
-        scale: 1;
     }
     .banner h2{
         margin: 0px;
@@ -576,12 +595,12 @@ svg path{
 }
 /* ------------------------------------------------------- */
 .win5{
-    min-height: 90vh;
-    margin-bottom: 100px;
+    min-height: 100vh;
+    max-width: 100vw;
     height: auto;
     display: flex;
     flex-direction: column; 
-    gap: 30px;
+    gap: 50px;
     overflow: hidden;
     top: 0;
     color: white;
@@ -657,13 +676,13 @@ svg path{
     cursor: pointer;
 }
 #content5_1,#content5_2,#content5_3{
+    width: 95%;
     left: 0;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    gap: 40px;
     align-items: center;
     justify-content: space-around;
-    scale: 0.9;
 }
 #content5_2{
     display: none;
@@ -672,6 +691,8 @@ svg path{
     display: none;
 }
 .contxt3{
+    height: fit-content;
+    width: fit-content;
     display: flex;
     flex-direction: column;
     border: 1px solid #bbccff;;
@@ -679,20 +700,20 @@ svg path{
     background-color: rgba(20, 20, 20, 0.8);
 }
 .primg{
-    height: 225px;
-    width: 530px;
-    padding: 0;
+    height: 30%;
+    width: 100%;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
 }
 .prdet{
+    width: fit-content;
     display: flex;
     flex-direction: column;
     gap: 90px;
-    padding: 0px 20px;
     font-family: Poppins;
     font-size: 16px;
     font-weight: 10;
+    padding: 0px 20px;
 }
 .prdet h2{
     font-weight: 500;
@@ -717,29 +738,13 @@ svg path{
 
 @media (min-width: 0px) and (max-width: 768px){
     .win5{
-        max-height: max-content ;
-        margin-bottom: 50px;
+        
     }
-    #content5_1{
+    #content5_1,#content5_2,#content5_3{
         display: grid;
         grid-template-columns: 1fr;
         scale: 0px;
-        gap: 0px;
-        margin-top: -70px;
-    }
-    #content5_2{
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 0px;
-        display: none;
-        margin-top: -7px;
-    }
-    #content5_3{
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 0px;
-        display: none;
-        margin-top: -22px;
+        gap: 20px;
     }
     #categories h3:nth-child(1):hover{
         background-color: initial;
@@ -750,22 +755,27 @@ svg path{
     #categories h3:nth-child(3):hover{
         background-color: initial;
     }
-    .contxt3{
-        scale: 85%;
+    #content5_2{
+    display: none;
     }
+    #content5_3{
+        display: none;
+    }
+    /* .contxt3{
+        scale: 75%;
+    } */
 }
 
 /* ------------------------------------------------------- */
 #win6{
-    /* height: 200vh; */
+    min-height: 100vh;
+    height: auto;
     display: flex;
     flex-direction: column; 
     gap: 80px;
-    /* scale: 0.9; */
     overflow: hidden;
     top: 0;
     color: white;
-    margin-top: 170px;
 }
 #hh5{
     font-family: Poppins;
@@ -907,13 +917,9 @@ svg path{
     display: none;
 }
 @media (min-width: 0px) and (max-width: 768px){
-    #win6{
-        height: 310vh;
-        /* margin-top: -200px; */
-    }
     #content6{
         display: none;
-        height: 90%;
+        height: 60%;
     }
     #content6_1{
         display: grid;
@@ -986,14 +992,15 @@ svg path{
 }
 /* -------------------------------------------------- */
 .mt{
-    height:30vh;
+    height:20vh;
 }
 /* -------------------------------------------------- */
 #win7{
-    height: 75vh;
+    min-height: 72vh;
+    height: auto;
     display: flex;
     flex-direction: column; 
-    gap: 70px;
+    gap: 60px;
     overflow: hidden;
     color: white;
     font-family: Poppins;
@@ -1124,20 +1131,16 @@ svg path{
     justify-content: space-evenly;
 }
 @media (min-width: 0px) and (max-width: 768px){
-    #win7{
-        height: 110vh;
-    }
     .content7{
         display: flex;
         flex-direction: column;
-        gap: 3%;
-        height: 90%;
-        max-width: 100%;
+        gap: 20px;
     }
-    fieldset{
+    .messagebox fieldset{
+        max-width: 80%;
+        width: auto;
         display: flex;
         flex-direction: column;
-        max-width: 80%;
         margin-left: auto;
         margin-right: auto;
     }
@@ -1155,20 +1158,20 @@ svg path{
         max-width: 100%;
     }
     #mb_subject{
-        max-width: 100;
+        max-width: 100%;
     }
     #mb_message{
         max-width: 100%;
-        height: 100px;
-    }
-    .right{
-        display: flex;
-        flex-direction: column;
     }
     #snd_msg{
         width: 40%;
         border-radius: 10px;
         font-weight: 300;
+    }
+    .right{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
     }
     .contactinfo{
         max-width: 85%;
@@ -1179,11 +1182,11 @@ svg path{
         max-width: 85%;
         margin-left: auto;
         margin-right: auto;
-    }
+    } 
 }
 /* ---------------------------------------------------- */
 #win8{
-    position: sticky;
+    position: fixed;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -1194,7 +1197,7 @@ svg path{
     padding: 15px 15px;
     border-radius: 20px;
     z-index: 10000;
-    bottom: 20px;
+    bottom: 10px;
     font-family: Poppins, sans-serif;
     background: rgba(255, 255, 255, 0);
     backdrop-filter: blur(10px);
@@ -1208,10 +1211,10 @@ svg path{
 #tabs1{
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
-    gap: 30px;
-    width: 100%;
+    gap: 20px;
+    /* width: 100%; */
     height: 100%;
 }
 #but_homewindow,#but_aboutwindow, #but_projectswindow, #but_skillswindow, #but_experiencewindow, #but_contactwindow{
@@ -1226,16 +1229,26 @@ svg path{
     #win8{
         display: flex;
     }
+    .gapfiller2{
+        height: 20vh;
+    }
+    .gapfiller3{
+        height: 10vh;
+    }
+    #window1,#window2,#window4,#window5,#window6,#window7 {
+    position: relative;
+    scroll-behavior: smooth;
+    scroll-margin-top: 150px;   
 }
-#wind1, #wind2,  #win7 {
-    scroll-margin-top: 140px; /* Adjust this value as needed */
 }
-/* #win4, #wind5, #win6 {
-    scroll-margin-top: 200px;
-    scroll-margin-bottom: -500px;
-} */
-#skills{
-    scroll-margin-top: 90px;
+#window1,#window2,#window4,#window5,#window6,#window7 {
+    position: relative;
+    scroll-behavior: smooth;
+    scroll-margin-top: 150px;   
+}
+.active1{
+    background-color: #2E61FF;
+    border-radius: 20px;
 }
 /* ---------------------------------------------------- */
 
