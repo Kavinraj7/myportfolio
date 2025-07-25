@@ -68,3 +68,20 @@ const observer = new IntersectionObserver((entries) => {
 sections.forEach(section => {
     observer.observe(section);
 });
+
+// ------------------------------------------------------------------------------------------
+// lighttheme
+
+function lighttheme(){
+    const bodyelement = document.body;
+    bodyelement.classList.toggle('darktheme')
+    const themebutton = document.getElementById("sun");
+    if(themebutton.src.includes("lighttheme.png")){
+        themebutton.src = "./images/darktheme.png";
+    }
+    else{
+        themebutton.src = "./images/lighttheme.png";
+    }
+    const tb = document.querySelectorAll("#sun");
+    console.log(tb);
+}

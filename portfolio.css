@@ -3,19 +3,51 @@
     padding: 0;
     scroll-behavior: smooth;
 }
+:root{
+    --bgcolour: black;
+    --text_colour : white;
+    --background_glassmorphism: rgba(255, 255, 255, 0.079);
+    --background_gmblur: blur(10px);
+    --border1:1px solid rgba(255, 255, 255, 0.1);
+    --boxbg:rgba(20, 20, 20, 0.8);
+    --border2: white solid 2px;
+    --lineinskills: 0.1px solid rgb(90, 97, 114);
+    --expdate: rgb(183, 180, 180);
+    --explogoenclosebg: #ffffff13;
+    --expcontbg:  rgba(255, 255, 255, 0.167);
+    --contactplaceh:  rgb(155, 152, 152);
+    --bottomnav: 3px solid white;
+    --backgroundimage:linear-gradient(rgb(26, 26, 26) 1px, transparent 1px), /* horizontal lines */
+  linear-gradient(90deg, rgb(26, 26, 26) 1px, transparent 1px); 
+}
 
+.darktheme{
+     --bgcolour: white;
+    --text_colour : black;
+    --background_glassmorphism: rgba(255, 255, 255, 0.826);
+    --background_gmblur: blur(10px);
+    --border1:1px solid rgba(0, 0, 0, 0.1);
+    --boxbg:rgba(234, 233, 233, 0.8);
+    --border2: rgb(45, 44, 44) solid 2px;
+    --lineinskills: 0.1px solid rgb(0, 0, 0);
+    --expdate: rgb(57, 55, 55);
+    --explogoenclosebg: #ffffff13;
+    --expcontbg:  rgba(220, 220, 220, 0.167);
+    --contactplaceh:  rgb(155, 152, 152);
+    --bottomnav: 3px solid #2E61FF;
+    --backgroundimage:linear-gradient(rgb(223, 223, 223) 1px, transparent 1px), /* horizontal lines */
+  linear-gradient(90deg, rgb(223, 223, 223) 1px, transparent 1px); 
+}
 body {
   margin: 0;
-  background-color: black;
-  background-image: 
-  linear-gradient(rgb(26, 26, 26) 1px, transparent 1px), /* horizontal lines */
-  linear-gradient(90deg, rgb(26, 26, 26) 1px, transparent 1px); /* vertical lines */
+  background-color: var(--bgcolour);
+  background-image:var(--backgroundimage);/* vertical lines */
   background-size: 40px 40px; /* adjust spacing here */
   overflow-x: hidden;
   
 }
 .active{
-    border-bottom: 3px solid white;
+    border-bottom: var(--bottomnav);
 }
 nav{
     position: sticky;
@@ -26,17 +58,16 @@ nav{
     width: 65%;
     margin-left: auto;
     margin-right: auto;
-    border: 2px solid black;
     padding: 15px 15px;
     border-radius: 20px;
     z-index: 10000;
     top: 20px;
     font-family: Poppins, sans-serif;
-    background: rgba(255, 255, 255, 0.079);
-    backdrop-filter: blur(10px);
+    background: var(--background_glassmorphism);
+    backdrop-filter: var(--background_gmblur);
     box-shadow: 0px 8px 16px -6px rgba(46, 97, 255, 0.4);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: white;
+    border: var(--border1);
+    color: var(--text_colour);
     height: 50px;
     flex-wrap: wrap;
 }
@@ -45,7 +76,7 @@ nav a{
     font-weight: 500;
     font-size: medium;
     text-decoration: none;
-    color: white;
+    color: var(--text_colour);
 }
 nav #tabs{
     display: flex;
@@ -101,7 +132,7 @@ nav #tabs{
 }
 svg path{
     fill: transparent;
-    stroke: white;
+    stroke: var(--text_colour);
     stroke-width: 0.6;
     stroke-dasharray: 490;
     stroke-dashoffset: 490;
@@ -116,12 +147,12 @@ svg path{
         fill: transparent;
     }
     100%{
-        fill: white;
+        fill: var(--text_colour);
         stroke-dashoffset: 0;
     }
 }
 .roles{
-    color: white;
+    color: var(--text_colour);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -180,7 +211,7 @@ svg path{
 }
 #wind2 #ab{
     text-align: center;
-    color: white;
+    color: var(--text_colour);
     height: 1%;
     font-size: xx-large;
     scale: 1.2;
@@ -260,7 +291,7 @@ svg path{
     font-size: medium;
     font-weight: 300;   
     background: linear-gradient(90deg, #2E61FF, #8A3DFF);
-    color: white;
+    color: var(--text_colour);
     border: none;
 }
 #download{
@@ -274,14 +305,14 @@ svg path{
     gap: 1%;
     width: 50%;
     height: 60%;
-    border: 2px solid black;
+    border: var(--border1);
     border-radius: 20px;
     padding: 50px 10px;
     padding-right: 90px;
-    background-color: rgba(20, 20, 20, 0.8);
+    background-color: var(--boxbg);
     box-shadow: 0px 8px 16px -6px rgba(46, 97, 255, 0.4);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: white;
+    border: var(--border1);
+    color: var(--text_colour);
     /* scale: 0.9; */
     /* backdrop-filter: blur(8px); */
 }
@@ -359,10 +390,9 @@ svg path{
 }
 #me{
     text-align: center;
-    color: white;
+    color: var(--text_colour);
     height: 1%;
     font-size: xx-large;
-    scale: 1.2;
 }
 #line2{
     width: 100px;
@@ -371,14 +401,20 @@ svg path{
     border-radius: 2px;
 }
 #content3{
+    max-width:90% ;
+    width: auto;
     height: 80%;
-    color: white;
-    /* scale: 0.97 ; */
+    color: var(--text_colour);
+    margin-left: auto;
+    margin-right: auto;
 }
 #cards{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 65px;
+    margin-left: auto;
+    margin-right: auto;
+
 }
 .shadowglow{
     width: 98%;
@@ -388,10 +424,9 @@ svg path{
     transition: transform 0.5s ease, box-shadow 0.3s ease;
 }
 .card{
-    background: rgba(255, 255, 255, 0.104);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border: white solid 2px;
+    background: var(--boxbg);
+    backdrop-filter: var(--background_gmblur);
+    border: var(--border2);
     border-radius: 10px;
     font-family: Poppins;
     height: 99%;
@@ -484,13 +519,13 @@ svg path{
 }
 #skills{
     text-align: center;
-    color: white;
+    color: var(--text_colour);
     height: 1%;
     font-size: xx-large;
     scale: 1;
 }
 #content4{
-    color: white;
+    color: var(--text_colour);
     display: flex;
     flex-direction: column;
     gap: 30px;
@@ -517,7 +552,7 @@ svg path{
     left: 13%;
     width: 80%;
     height: 0.1px;
-    border: 0.1px solid rgb(90, 97, 114);
+    border: var(--lineinskills);
     z-index: 2; 
     margin-top: 37px;
     /* align-self: flex-end; */
@@ -603,7 +638,7 @@ svg path{
     gap: 50px;
     overflow: hidden;
     top: 0;
-    color: white;
+    color: var(--text_colour);
     align-items: center;
 }
 #hh4{
@@ -629,7 +664,7 @@ svg path{
 }
 #prjcts{
     text-align: center;
-    color: white;
+    color: var(--text_colour);
     font-size: xx-large;
     scale: 1;
 }
@@ -641,7 +676,7 @@ svg path{
     font-family: Poppins;
     justify-content: center;
     font-size: 14px;
-    border: 2px solid white;
+    border: var(--border2);
     border-radius: 20px;
     border-bottom-left-radius: 20px;
     border-top-left-radius: 20px;
@@ -649,7 +684,7 @@ svg path{
     border-top-right-radius: 20px;
 }
 #categories h3{
-    border-right: 2px solid whitesmoke;
+    border-right: var(--border2);
     padding: 10px 20px;   
 }
 #categories h3:last-child{
@@ -663,16 +698,7 @@ svg path{
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px ;
 }
-#categories h3:nth-child(1):hover{
-    background-color: #2e62ff92;
-}
-#categories h3:nth-child(2):hover{
-    background-color: #2e62ff92;
-}
-#categories h3:nth-child(3):hover{
-    background-color: #2e62ff92;   
-}
-#c_da,#c_ai,#c_wd{
+#cda,#cai,#cwd{
     cursor: pointer;
 }
 #content5_1,#content5_2,#content5_3{
@@ -695,9 +721,9 @@ svg path{
     width: fit-content;
     display: flex;
     flex-direction: column;
-    border: 1px solid #bbccff;;
+    border: var(--border2);
     border-radius: 20px;
-    background-color: rgba(20, 20, 20, 0.8);
+    background-color:var(--boxbg);
 }
 .primg{
     height: 30%;
@@ -775,7 +801,7 @@ svg path{
     gap: 80px;
     overflow: hidden;
     top: 0;
-    color: white;
+    color: var(--text_colour);
 }
 #hh5{
     font-family: Poppins;
@@ -796,7 +822,7 @@ svg path{
 }
 #exp{
     text-align: center;
-    color: white;
+    color: var(--text_colour);
     height: 1%;
     font-size: xx-large;
     scale: 1;
@@ -829,10 +855,10 @@ svg path{
     margin-left: auto;
     margin-right: auto;
     column-gap: 75px;
-    border: 1px solid rgb(89, 89, 89);
+    border: var(--border1);
     border-radius: 20px;
     padding: 50px 0px;
-    background: rgba(255, 255, 255, 0.129);
+    background: var(--boxbg);
     backdrop-filter: blur(10px);
     font-family: Poppins;
 }
@@ -841,7 +867,7 @@ svg path{
     font-size: 16px;
     font-weight: 600;
     padding-top: 22px;
-    color: rgb(183, 180, 180);
+    color: var(--expdate);
 }
 .right_move{
     height: fit-content;
@@ -850,12 +876,12 @@ svg path{
 }
 .content_middle{
     position: relative;
-    background: white;
+    background: var(--text_colour);
     height: 150%;
 }
 .content_middle_top{
     /* position: relative; */
-    background: rgb(255, 255, 255);
+    background: var(--text_colour);
     height: 40px;
     margin-top: -40px;
 }
@@ -872,7 +898,7 @@ svg path{
     align-items: center;
     position: absolute;
     transform: translateX(-48%);  
-    background-color: #ffffff13;
+    background-color: var(--explogoenclosebg);
     height: 85px;
     width: 85px;
     border-radius: 40px;
@@ -883,12 +909,12 @@ svg path{
     gap: 30px;
     width: 70%;
     height: fit-content;
-    border: 1px solid rgb(128, 125, 125);
+    border: var(--border1);
     border-radius: 20px;
     padding: 25px;
     line-height: 30px;
     position: relative;
-    background: rgba(255, 255, 255, 0.167);
+    background: var(--expcontbg);
     box-shadow: 4px 5px 20px 1px rgba(46, 98, 255, 0.303);
 }
 .pin{
@@ -928,11 +954,11 @@ svg path{
         justify-content: center;
         margin-left: auto;
         margin-right: auto;
-        border: 1px solid rgb(89, 89, 89);
+        border: var(--border1);
         border-radius: 20px;
         padding: 50px 0px;
-        background: rgba(255, 255, 255, 0.129);
-        backdrop-filter: blur(10px);
+        background: var(--boxbg);
+        backdrop-filter: var(--background_gmblur);
         font-family: Poppins;
         gap: 60px;   
         width: 95%;
@@ -959,7 +985,7 @@ svg path{
     .content_middle1::after{
         content: "";
         height: 20.2%;
-        background-color: white;
+        background-color: var(--text_colour);
         width: 1px;
         position: absolute;
         margin-left: 5.5%;
@@ -973,7 +999,7 @@ svg path{
         transform: translateX(0%) translateY(-5%);
     }
     .content_middle_top{
-        background: rgb(255, 255, 255);
+        background: var(--text_colour);
         height: 90px;
         width: 2px; 
         transform: translateX(80%);
@@ -1002,7 +1028,7 @@ svg path{
     flex-direction: column; 
     gap: 60px;
     overflow: hidden;
-    color: white;
+    color: var(--text_colour);
     font-family: Poppins;
 }
 #hh6{
@@ -1018,7 +1044,7 @@ svg path{
 }
 #getintouch{
     text-align: center;
-    color: white;
+    color: var(--text_colour);
     font-size: xx-large;
     scale: 1;
 }
@@ -1033,10 +1059,10 @@ svg path{
     flex-direction: column;
     gap: 20px;
     padding: 20px 30px;
-    border: 1px solid rgb(131, 131, 131);
+    border: var(--border1);
     border-radius: 20px;
-    background: rgba(255, 255, 255, 0.129);
-    backdrop-filter: blur(10px);}
+    background:var(--boxbg);
+    backdrop-filter: var(--background_gmblur);}
 .messagebox fieldset h2{
     font-size: 20px;
     font-weight: 500;
@@ -1044,13 +1070,13 @@ svg path{
 .messagebox fieldset input{
     height: 40px;
     border-radius: 10px;
-    background: rgba(255, 255, 255, 0.167);
+    background: var(--expcontbg);
     box-shadow: 1px 1px 20px 0px rgba(46, 98, 255, 0.303);
 }
 .messagebox fieldset input::placeholder{
     padding-left: 10px;
     margin-top: auto;
-    color: rgb(155, 152, 152);
+    color: var(--contactplaceh);
 }
 .name_email{
     display: flex;
@@ -1062,21 +1088,21 @@ svg path{
 #mb_message{
     height: 130px;
     border-radius: 10px;
-    background: rgba(255, 255, 255, 0.167);
+    background: var(--expcontbg);
     box-shadow: 1px 1px 20px 0px rgba(46, 98, 255, 0.303);
 }
 #mb_message::placeholder{
     padding-left: 10px;
     padding-top: 10px;
     font-size: 15px;
-    color: rgb(155, 152, 152);
+    color:var(--contactplaceh);
 }
 #snd_msg{
     width: 15%;
     height: 40px;
     border-radius: 10px;
     background: linear-gradient(to right, #3b82f6, #6366f1); 
-    color: white;
+    color: var(--text_colour);
     font-size: 16px;
     font-weight: bold;
     margin-top: 10px;
@@ -1089,12 +1115,12 @@ svg path{
 .contactinfo{
     display: flex;
     flex-direction: column;
-    border: 1px solid rgb(131, 131, 131);
+    border: var(--border1);
     width: 500px;
     padding: 20px 20px;
     border-radius: 20px;
-    background: rgba(255, 255, 255, 0.129);
-    backdrop-filter: blur(10px);
+    background: var(--boxbg);
+    backdrop-filter: var(--background_gmblur);
 }
 .contactinfo h2{
     padding-bottom: 20px;
@@ -1116,11 +1142,11 @@ svg path{
     flex-direction: column;
     gap: 20px;
     width: 500px;
-    border: 1px solid rgb(131, 131, 131);
+    border: var(--border1);
     padding: 20px 20px;
     border-radius: 20px;
-    background: rgba(255, 255, 255, 0.129);
-    backdrop-filter: blur(10px);
+    background: var(--boxbg);
+    backdrop-filter: var(--background_gmblur);
 }
 .connectwithme h2{
     font-size: 20px;
@@ -1189,20 +1215,19 @@ svg path{
     position: fixed;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     margin-left: auto;
     margin-right: auto;
-    border: 2px solid black;
     padding: 15px 15px;
     border-radius: 20px;
     z-index: 10000;
     bottom: 10px;
     font-family: Poppins, sans-serif;
-    background: rgba(255, 255, 255, 0);
+    background: var(--background_glassmorphism);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: white;
+    border: var(--border1);
+    color: var(--text_colour);
     height: 20px;
     flex-wrap: wrap;
     width: 90%;
@@ -1211,7 +1236,7 @@ svg path{
 #tabs1{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     gap: 20px;
     /* width: 100%; */
@@ -1348,3 +1373,5 @@ svg path{
     animation: PopAnimation 0.5s ease-in 1;    
     animation-fill-mode: forwards;
 }
+
+/* ------------------------------------------------------- */
