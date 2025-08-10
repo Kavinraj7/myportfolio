@@ -76,12 +76,10 @@ function lighttheme(){
     const bodyelement = document.body;
     bodyelement.classList.toggle('darktheme')
     const themebutton = document.getElementById("sun");
-    if(themebutton.src.includes("lighttheme.png")){
-        themebutton.src = "./images/darktheme.png";
+    if(themebutton.innerText=="sunny"){
+        themebutton.innerText =  "bedtime";
     }
     else{
-        themebutton.src = "./images/lighttheme.png";
+        themebutton.innerText = "sunny";
     }
-    const tb = document.querySelectorAll("#sun");
-    console.log(tb);
 }
