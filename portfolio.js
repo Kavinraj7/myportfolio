@@ -83,3 +83,57 @@ function lighttheme(){
         themebutton.innerText = "sunny";
     }
 }
+// ---------------------------------------------------------------------------------------------
+// Project view
+var idd;
+var ids;
+const overlay = document.createElement('div');
+document.addEventListener("click",function(event){
+    if(event.target.closest("#g")){
+        return;
+    }
+    const project = event.target.closest(".contxt3"); 
+    if (project){
+        console.log(project.id)
+        idd = "p_"+project.id;
+        ids = document.getElementById("p_"+project.id);
+        ids.style.display = "flex";
+        blockAllClicksExcept([idd]);
+    }
+});
+function blockAllClicksExcept(exceptions) {
+    overlay.id = 'click-blocker';
+    Object.assign(overlay.style, {
+        position: 'fixed',
+        top: '0',
+        left: '0',
+        width: '100%',
+        height: '100%',
+        background: 'rgba(0, 0, 0, 0.5)', 
+        zIndex: '11000',
+        pointerEvents: 'auto'  
+    });
+
+    document.body.appendChild(overlay);
+
+    exceptions.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) {
+            el.style.zIndex = '12000'; 
+            el.style.pointerEvents = 'auto';  
+        }
+    });
+
+     
+    overlay.addEventListener('click', (e) => {
+        if (!exceptions.some(id => document.getElementById(id)?.contains(e.target))) {
+            e.stopPropagation();
+            e.preventDefault();
+        }
+    }, true);
+}
+
+function prjct1close(){
+    ids.style.display="none";
+    document.body.removeChild(overlay);
+}
