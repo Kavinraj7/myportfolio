@@ -137,3 +137,15 @@ function prjct1close(){
     ids.style.display="none";
     document.body.removeChild(overlay);
 }
+
+// ---------------------------------------------------------------------------------------------------------
+document.querySelectorAll('.messagebox input, .messagebox textarea')
+        .forEach(field => {
+            field.addEventListener('input', function () {
+                if (this.value.trim() !== "") {
+                    this.classList.add('activeinput');
+                } else {
+                    this.classList.remove('activeinput');
+                }
+            });
+        });

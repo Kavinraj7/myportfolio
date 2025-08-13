@@ -725,7 +725,7 @@ svg path{
     display: none;
     gap: 40px;
     margin: 0 auto;
-    border: 1px solid white;
+    border: 1px solid var(--text_colour);
     color: var(--text_colour);
     padding: 20px;
     background: var(--prjctbg);
@@ -1225,6 +1225,11 @@ body.blur {
     margin-top: auto;
     color: var(--contactplaceh);
 }
+.activeinput{
+    background-color: grey;
+    color: var(--text_colour);
+    padding-left: 15px;
+}
 .name_email{
     display: flex;
     gap: 30px;
@@ -1302,6 +1307,10 @@ body.blur {
 .logos{
     display: flex;
     justify-content: space-evenly;
+}
+.logos a{
+    text-decoration: none;
+    color: var(--text_colour);
 }
 #ic2{
     font-size: 30px;
